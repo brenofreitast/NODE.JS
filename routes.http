@@ -1,0 +1,27 @@
+POST http://localhost:3000/videos
+Content-Type: application/json
+
+{
+    "title": "Vídeo 01",
+    "description": "Esse é o primeiro vídeo",
+    "duration": 180
+}
+
+
+// 3 cerquilhas separa os request.
+###  
+
+GET  http://localhost:3000/videos
+
+
+###
+
+PUT  http://localhost:3000/videos/
+Content-Type: application/json
+
+{
+    "title": "Vídeo 02",
+    "description": "Esse é o primeiro vídeo",
+    "duration": 180
+}
+
