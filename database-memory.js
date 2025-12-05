@@ -1,5 +1,5 @@
-// Ao ultilizar cerquilha (#), criamos uma chave privada, a informaçao 
-// só sera visivel dentro da classe.
+// Ao ultilizar cerquilha (#), criamos uma chave privada, a informaçao só sera visivel dentro da classe.
+
 
 import { randomUUID } from "node:crypto"
 
@@ -10,7 +10,7 @@ export class DatabaseMemory {
 // Metódos para manusear os videos.
     
     list(){                                         // Mostra os videos no banco de dados.
-        return Array.from(this.#videos.entries()).map((videoArray) => {
+        return Array.from(this.#videos.entries()).map((videoArray) => {     // Array.from => converte uma estrutura de dados que nao é uma array em array.
             const id = videoArray[0]
             const data = videoArray[1]
 
@@ -19,12 +19,13 @@ export class DatabaseMemory {
                 ...data
             }
         })   
-    }                                               // Array.from => converte uma estrutura de dados que nao é uma array em array.
+    }                                               
 
-    create(video) {                                 // Recebe o video.
+    create(video) {                                 
 
-        const videoId = randomUUID                  // Cria um id aleatorio unico.
+        const videoId = randomUUID()                // Cria um id aleatorio unico.
         this.#videos.set(videoId, video)            // Salva dentro do Map() videos.
+        return videoId
     }
 
     update(id, video) {                             // Recebe o id e o video.

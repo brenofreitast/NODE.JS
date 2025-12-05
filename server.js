@@ -65,7 +65,7 @@
     })
 
     server.put('/videos/:id', (req, res) => {                    // .put = Atualizar
-        const videoId = req.params.id                       // req.params.id => params é o que vem depois do ':'.
+        const videoId = req.params.id                            // req.params.id => params é o que vem depois do ':'.
         const { title, description, duration} = req.body
         
 
@@ -80,7 +80,7 @@
     })
 
     server.delete('/videos/:id', () => {  // .delete = Deletar
-
+        
     })
 
     server.listen({
